@@ -25,6 +25,14 @@ public class ArrayManipulation {
         return isDuplicate;
     }
 
+
+ /*
+ * 1. Store the input value by user
+ * 2. Make variable to store the result
+ * 3. Transform string text to array
+ * 4. Iterate start from the last index (-1)
+ * 5. Append the text in result variable*/
+
     public static String getTextReverse(){
         String userText = InputUser.getString("What word would you like to reverse:? ");
         String resUserText = "";
@@ -37,4 +45,24 @@ public class ArrayManipulation {
 
         return resUserText;
     }
+    /*
+     * 1. Store the input value by user
+     * 2. Make variable to store the result
+     * 3. Transform string text to array
+     * 4. Iterate start from the initialize index to get new index by get to know the module
+     * 5. Append the result in new variable*/
+    public static int[] getRotateByIndex(){
+        int userSizeIdx = InputUser.getInt("How many numbers do you want to store as collection number of an array? ");
+        int userIdx = InputUser.getInt("What index number to start the rotation:? ");
+        int[] userArr = InputUser.getIntArray("Let's type each of number ! ", userSizeIdx);
+        int[] userResArr = new int[userSizeIdx];
+
+        for (int i = 0; i < userSizeIdx; i++) {
+            int newIdx = (i + userIdx) % userSizeIdx;
+            userResArr[newIdx] = userArr[i];
+        }
+
+        return userResArr;
+    }
 }
+
