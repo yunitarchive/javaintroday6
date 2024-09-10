@@ -36,11 +36,14 @@ public class ArrayManipulation {
     public static String getTextReverse(){
         String userText = InputUser.getString("What word would you like to reverse:? ");
         String resUserText = "";
-        char[] userTextArr = userText.toCharArray();
+        //Alternative method
+        //char[] userTextArr = userText.toCharArray();
 
-        //System.out.println(userText.length());
+
         for(int s = userText.length() -1 ; s>=0 ; s--){
-          resUserText += userTextArr[s];
+            //Alternative method
+            //resUserText += userTextArr[s];
+            resUserText +=  userText.charAt(s);
         }
 
         return resUserText;
@@ -58,7 +61,9 @@ public class ArrayManipulation {
         int[] userResArr = new int[userSizeIdx];
 
         for (int i = 0; i < userSizeIdx; i++) {
-            int newIdx = (i + userIdx) % userSizeIdx;
+            //To right
+            //int newIdx = (i + userIdx) % userSizeIdx;
+            int newIdx = (i + userSizeIdx - userIdx) % userSizeIdx;
             userResArr[newIdx] = userArr[i];
         }
 
